@@ -21,6 +21,8 @@ function init(){
 }
 
 function gameCtrl(event){
+    console.log("diskSelected", diskSelected);
+	//debugger;
 	if(diskSelected){
 		move(event);
 	} else if(!diskSelected){
@@ -36,11 +38,17 @@ function move(event){
 
     var firstChild = $(event.target).find('.blocks:first-child');
 
+
+    var blocksContainer = $(event.target).find('.blocks-container');
+    console.log("blocks:", blocksContainer);
+    //debugger;
+
     console.log("first child of target text");
     console.log(firstChild.text());     
 
     if(diskToMove.text() < firstChild.text() || !firstChild.text()) {
-     	$(event.target).prepend(diskToMove); //$(event.target).find('.blocks:first-child'));
+     	//$(event.target).prepend(diskToMove); //$(event.target).find('.blocks:first-child'));
+        blocksContainer.prepend(diskToMove);
         winning(event);
      }
      else {
