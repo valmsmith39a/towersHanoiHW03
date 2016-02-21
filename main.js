@@ -5,11 +5,11 @@ var diskToMove;
 var diskSelected;
 var towerMoveFrom;
 
-function init(){
+function init() {
     $('.container').click(gameCtrl);
 }
 
-function gameCtrl(event){
+function gameCtrl(event) {
     if(diskSelected){
 		move(event);
 	} else if(!diskSelected){
@@ -17,7 +17,7 @@ function gameCtrl(event){
 	}
 }
 
-function move(event){
+function move(event) {
 	diskSelected = false;
     var firstChild = $(event.target).find('.blocks:first-child');
     var blocksContainer = $(event.target).find('.blocks-container');
